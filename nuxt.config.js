@@ -28,7 +28,6 @@ module.exports = {
 
   buildModules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
     '@nuxtjs/axios'
   ],
@@ -55,21 +54,6 @@ module.exports = {
       setHeaders (res, path) {
         if (path.includes('sw.js')) {
           res.setHeader('Cache-Control', `public, max-age=${15 * 60}`)
-        }
-      }
-    }
-  },
-  build: {
-    extractCSS: true,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
         }
       }
     }
