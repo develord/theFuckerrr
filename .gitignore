@@ -2,8 +2,6 @@
 node_modules
 /dist
 /src/lang
-nuxt
-.nuxt
 
 # local env files
 .env.local
