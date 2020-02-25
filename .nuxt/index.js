@@ -11,9 +11,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_swregister_d5eccfc2 from 'nuxt_plugin_swregister_d5eccfc2' // Source: .\\sw.register.js (mode: 'client')
-import nuxt_plugin_nuxticons_5bcd0952 from 'nuxt_plugin_nuxticons_5bcd0952' // Source: .\\nuxt-icons.js (mode: 'all')
-import nuxt_plugin_axios_e85e7c94 from 'nuxt_plugin_axios_e85e7c94' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_swregister_460443e7 from 'nuxt_plugin_swregister_460443e7' // Source: .\\sw.register.js (mode: 'client')
+import nuxt_plugin_nuxticons_032c76ec from 'nuxt_plugin_nuxticons_032c76ec' // Source: .\\nuxt-icons.js (mode: 'all')
+import nuxt_plugin_axios_ebec3904 from 'nuxt_plugin_axios_ebec3904' // Source: .\\axios.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -147,16 +147,16 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_swregister_d5eccfc2 === 'function') {
-    await nuxt_plugin_swregister_d5eccfc2(app.context, inject)
+  if (process.client && typeof nuxt_plugin_swregister_460443e7 === 'function') {
+    await nuxt_plugin_swregister_460443e7(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_nuxticons_5bcd0952 === 'function') {
-    await nuxt_plugin_nuxticons_5bcd0952(app.context, inject)
+  if (typeof nuxt_plugin_nuxticons_032c76ec === 'function') {
+    await nuxt_plugin_nuxticons_032c76ec(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_e85e7c94 === 'function') {
-    await nuxt_plugin_axios_e85e7c94(app.context, inject)
+  if (typeof nuxt_plugin_axios_ebec3904 === 'function') {
+    await nuxt_plugin_axios_ebec3904(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
