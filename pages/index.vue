@@ -1,7 +1,7 @@
 <template>
     <v-card>
       <nuxt-link to="/tt">to page 2</nuxt-link>
-      <h1>This is the front</h1>
+      <h1>This is the front base container</h1>
     </v-card>
 </template>
 
