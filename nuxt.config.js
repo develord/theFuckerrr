@@ -19,24 +19,20 @@ module.exports = {
   },
 
   manifest: {
-    name: 'Amine',
-    short_name: 'Amine',
-    description: 'Amine',
-    theme_color: '#2F495E',
-    start_url: ''
+    name: 'ProposalMate',
+    short_name: 'ProposalMate',
+    lang: 'fr',
+    description: 'Create beautiful business proposals',
+    theme_color: '#188269',
+    background_color: '#000'
   },
 
   buildModules: [
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    '@nuxtjs/vuetify',
     '@nuxtjs/axios'
   ],
-
-  vuetify: {
-    /* module options */
-    treeShake: true,
-    optionsPath: "./vuetify.options.js"
-  },
 
   axios: {
     baseURL: '/'
@@ -44,6 +40,11 @@ module.exports = {
 
   plugins: [
   ],
+
+  vuetify: {
+    treeShake: true,
+    optionsPath: './vuetify.options.js'
+  },
 
   render: {
     http2: {
@@ -54,6 +55,22 @@ module.exports = {
       setHeaders (res, path) {
         if (path.includes('sw.js')) {
           res.setHeader('Cache-Control', `public, max-age=${15 * 60}`)
+        }
+      }
+    }
+  },
+
+  build: {
+    extractCSS: false,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
         }
       }
     }
