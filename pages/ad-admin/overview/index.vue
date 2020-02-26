@@ -73,11 +73,21 @@
 </template>
 
 <script>
+import Vue from 'vue'
 
   export default {
     name: 'backOfficeLayout',
     data: () => ({
       drawer: null
-    })
+    }),
+    head () {
+      return {
+        title: 'test',
+        meta: [
+          // hid est utilisé comme identifiant unique. N'utilisez pas `vmid` car ça ne fonctionnera pas
+          { hid: 'description', name: 'description', content: 'Ma description personnalisée' }
+        ]
+      }
+    }
   }
 </script>

@@ -63,11 +63,11 @@ module.exports = {
   },
 
   build: {
-    extractCSS: true,
+    extractCSS: false,
     postcss: {
       plugins: [
         purgecss({
-          content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './node_modules/vuetify/src/**/*.js', './node_modules/vuetify/src/**/*.ts'],
+          content: ['./pages/**/*.vue', './node_modules/vuetify/src/**/*.js', './node_modules/vuetify/src/**/*.ts'],
           whitelist: ['html', 'body'],
         })
       ]

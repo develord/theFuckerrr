@@ -4,3 +4,8 @@
       <h1>this is the back base container</h1>
   </div>
 </template>
+
+<script>
+export default {
+}
+</script>
