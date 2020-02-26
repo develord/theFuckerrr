@@ -32,7 +32,6 @@ module.exports = {
   buildModules: [
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify',
     '@nuxtjs/axios'
   ],
 
@@ -42,11 +41,6 @@ module.exports = {
 
   plugins: [
   ],
-
-  vuetify: {
-    treeShake: true,
-    optionsPath: './vuetify.options.js'
-  },
 
   render: {
     http2: {
@@ -67,7 +61,7 @@ module.exports = {
     postcss: {
       plugins: [
         purgecss({
-          content: ['./pages/**/*.vue', './node_modules/vuetify/src/**/*.js', './node_modules/vuetify/src/**/*.ts'],
+          content: ['./pages/**/*.vue'],
           whitelist: ['html', 'body'],
         })
       ]
