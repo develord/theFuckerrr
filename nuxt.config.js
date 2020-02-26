@@ -57,14 +57,6 @@ module.exports = {
   },
 
   build: {
-    extractCSS: false,
-    postcss: {
-      plugins: [
-        purgecss({
-          content: ['./pages/**/*.vue'],
-          whitelist: ['html', 'body'],
-        })
-      ]
-    }
+    extractCSS: false
   }
 }
