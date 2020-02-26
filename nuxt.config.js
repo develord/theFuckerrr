@@ -1,3 +1,5 @@
+//import purgecss from '@fullhuman/postcss-purgecss'
+const purgecss = require('@fullhuman/postcss-purgecss')
 module.exports = {
   mode: 'universal',
   head: {
@@ -61,18 +63,14 @@ module.exports = {
   },
 
   build: {
-    extractCSS: false,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
-      }
+    extractCSS: true,
+    postcss: {
+      plugins: [
+        purgecss({
+          content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './node_modules/vuetify/src/**/*.js', './node_modules/vuetify/src/**/*.ts'],
+          whitelist: ['html', 'body'],
+        })
+      ]
     }
   }
 }
